@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+	<style>
+	body{
+	background-color:#010000;
+	color:rgb(235, 138, 126);
+	font-size:25px;
+	 font-family: "Times New Roman", Times, serif;
+	}
+	
+	.container{
+
+	   background-color:
+	   }
+	   p{
+margin-left :10px;
+color : red;
+font-size : 8px;
+}
+	</style>
+	<script>
+function validateForm() {
+  var fname = document.forms["myForm"]["Firstname"].value;
+var genders = document.getElementsByName("Gender");
+  if (fname == "") {
+    err = "Name must be filled out";
+	 document.getElementById("demo").innerHTML = err;
+	document.myForm.fname.focus();
+    	return false;
+  }
+else if (genders[0].checked == false && genders[1].checked == false){
+	err = "check gender";
+ 	document.getElementById("demo").innerHTML = err;
+	return false;
+}
+else
+{
+	err = "input ok";
+ 	document.getElementById("demo").innerHTML = err;
+	return true;
+}
+
+}
+</script>
+	
+
+<html>
+
+<body>
+<div class="container my-5">
+<center><h2>Signup Form</h2></center>
+
+<center><form action="create.php"onsubmit="return validateForm()" method="POST"><center>
+
+  <fieldset>
+
+    <legend>Personal information:</legend>
+
+    First name:<br>
+
+    <input type="text" name="firstname" required >
+
+    <br>
+
+    Last name:<br>
+
+    <input type="text" name="lastname" >
+
+    <br>
+
+    Email:<br>
+
+    <input type="email" name="email">
+
+    <br>
+
+  
+    <br>
+
+    Gender:<br>
+
+    <input type="radio" name="gender" value="Male">Male
+
+    <input type="radio" name="gender" value="Female">Female
+
+    <br><br>
+
+    <input type="submit" name="submit" value="submit">
+
+  </fieldset>
+
+</form>
+</div>
+
+</body>
+
+</html>

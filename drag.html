@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+	ol{
+		list-style-type: none;
+		width: 170px;
+		height: 480px;
+	}
+	li{
+		height: 30px;
+		width: 150px;
+		border: 1px solid black;
+		font-size: 20px;
+		text-align: center;
+		margin: 2px;
+	}
+	#countries li {
+		background-color: Pink;
+	}
+	#cities li {
+		background-color: silver;
+	}
+	fieldset{
+		width: 200px;
+		height: 500px;
+		float: left;
+		margin: 30px;
+		border: 5px solid black;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<
+
+<script>
+$(document).ready(function(){
+
+	$("#countries").sortable({connectWith:"#cities"});
+	$("#cities").sortable({connectWith:"#countries"});
+
+
+});
+
+</script>
+</head>
+<body>
+	<fieldset id = "left">
+		<legend>Countries</legend>
+		<ol id = "countries">
+			<li>Pakistan</li>
+			<li>Iran</li>
+			<li>China</li>
+			<li>UAE</li>
+			<li>India</li>
+		</ol>
+	</fieldset>
+	<fieldset id = "right">
+		<legend>Cities</legend>
+		<ol id = "cities">
+			<li>Sargodha</li>
+			<li>Lahore</li>
+			<li>Faisalabad</li>
+			<li>Gujranwala</li>
+			<li>Islamabad</li>
+		</ol>
+	</fieldset>
+
+</body>
+</html>
